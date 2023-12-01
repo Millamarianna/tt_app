@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.f855e6bc.css",
-    "main.js": "/react-gh-pages/static/js/main.64175ed5.js",
-    "static/js/787.abc93b1b.chunk.js": "/react-gh-pages/static/js/787.abc93b1b.chunk.js",
-    "static/media/logo.svg": "/react-gh-pages/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/react-gh-pages/index.html",
-    "main.f855e6bc.css.map": "/react-gh-pages/static/css/main.f855e6bc.css.map",
-    "main.64175ed5.js.map": "/react-gh-pages/static/js/main.64175ed5.js.map",
-    "787.abc93b1b.chunk.js.map": "/react-gh-pages/static/js/787.abc93b1b.chunk.js.map"
+    "main.css": "/tt_app/static/css/main.f855e6bc.css",
+    "main.js": "/tt_app/static/js/main.22f00604.js",
+    "static/js/787.abc93b1b.chunk.js": "/tt_app/static/js/787.abc93b1b.chunk.js",
+    "static/media/logo.svg": "/tt_app/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/tt_app/index.html",
+    "main.f855e6bc.css.map": "/tt_app/static/css/main.f855e6bc.css.map",
+    "main.22f00604.js.map": "/tt_app/static/js/main.22f00604.js.map",
+    "787.abc93b1b.chunk.js.map": "/tt_app/static/js/787.abc93b1b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.64175ed5.js"
+    "static/js/main.22f00604.js"
   ]
 }
