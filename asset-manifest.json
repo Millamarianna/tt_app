@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/tt_app/static/css/main.241951ba.css",
-    "main.js": "/tt_app/static/js/main.6b2086c0.js",
+    "main.js": "/tt_app/static/js/main.2b46c846.js",
     "static/js/787.abc93b1b.chunk.js": "/tt_app/static/js/787.abc93b1b.chunk.js",
     "index.html": "/tt_app/index.html",
     "main.241951ba.css.map": "/tt_app/static/css/main.241951ba.css.map",
-    "main.6b2086c0.js.map": "/tt_app/static/js/main.6b2086c0.js.map",
+    "main.2b46c846.js.map": "/tt_app/static/js/main.2b46c846.js.map",
     "787.abc93b1b.chunk.js.map": "/tt_app/static/js/787.abc93b1b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.241951ba.css",
-    "static/js/main.6b2086c0.js"
+    "static/js/main.2b46c846.js"
   ]
 }
