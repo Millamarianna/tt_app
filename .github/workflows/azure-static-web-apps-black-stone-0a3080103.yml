@@ -21,9 +21,9 @@ jobs:
           git config --global user.email "milla.tuomainen@outlook.com"
           chmod -R 777 .  # Change permissions as necessary
           
-      - name: Change Ownership of .git Directory
+      - name: Change Ownership of .git/config Directory
         run: |
-          sudo chown -R $USER:$USER ./
+          sudo chown -R $USER:$USER .git/config
       
       - uses: actions/checkout@v3
         with:
@@ -40,7 +40,7 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: "dist" # Built app content directory - optional
+          output_location: "build" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
