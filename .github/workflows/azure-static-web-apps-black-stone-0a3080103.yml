@@ -23,7 +23,7 @@ jobs:
           
       - name: Change Ownership of .git Directory
         run: |
-          sudo chown -R $USER:$USER .git/
+          sudo chown -R $USER:$USER ./
       
       - uses: actions/checkout@v3
         with:
