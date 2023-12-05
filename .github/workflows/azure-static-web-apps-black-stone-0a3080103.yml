@@ -21,14 +21,13 @@ jobs:
           git config --global user.email "milla.tuomainen@outlook.com"
           chmod -R 777 .  # Change permissions as necessary
           
-      - name: Change Ownership of .git/config Directory
+      - name: Change Ownership of .git Directory
         run: |
-          sudo chown -R $USER:$USER .git/config
+          sudo chown -R $USER:$USER ./
       
       - uses: actions/checkout@v3
         with:
           submodules: true
-          lfs: false
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
