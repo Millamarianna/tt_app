@@ -22,6 +22,10 @@ jobs:
           chmod -R 777 .  # Change permissions as necessary
       -  name:  Disable  CI  
       - run:  echo  "CI=false" >> $GITHUB_ENV
+
+      - name: Change Ownership of .git Directory
+        run: |
+          sudo chown -R $USER:$USER .git/
       
       - uses: actions/checkout@v3
         with:
