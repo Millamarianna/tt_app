@@ -20,8 +20,6 @@ jobs:
           git config --global user.name "Your Name"
           git config --global user.email "your.email@example.com"
           chmod -R 777 .  # Change permissions as necessary
-      -  name:  Disable  CI  
-      - run:  echo  "CI=false" >> $GITHUB_ENV
 
       - name: Change Ownership of .git Directory
         run: |
