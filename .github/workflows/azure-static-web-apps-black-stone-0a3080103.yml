@@ -19,11 +19,11 @@ jobs:
         run: |
           git config --global user.name "Millamarianna"
           git config --global user.email "milla.tuomainen@outlook.com"
-          chmod -R 777 .  # Change permissions as necessary
+          chmod 644 .git/config  # Change permissions as necessary
           
       - name: Change Ownership of .git Directory
         run: |
-          sudo chown -R $USER:$USER ./
+          chown -R $USER:$USER ./
       
       - uses: actions/checkout@v3
         with:
