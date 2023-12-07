@@ -18,13 +18,13 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: true
-        
+      
       - name: Set User Configurations
         run: |
           git config --global user.name "Millamarianna"
           git config --global user.email "milla.tuomainen@outlook.com"
           chmod -R 777 .  # Change permissions as necessary
-      
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
