@@ -1,14 +1,22 @@
-import Header from "./Header";
-import Footer from "./Footer";
+import { Outlet, Link } from "react-router-dom";
 
-const Layout = ({content}) => {
+const Layout = () => {
   return (
+    <>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/customers">Customers</Link>
+          </li>
+        </ul>
+      </nav>
 
-    <div className="flex flex-col h-screen bg-orange-400">
-        <Header />
-        {content}
-        
-    </div>
+      <Outlet />
+    </>
   )
-}
-export default Layout
+};
+
+export default Layout;
