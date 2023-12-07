@@ -1,7 +1,7 @@
 {
   "name": "ttfrontend",
   "version": "0.1.0",
-  "homepage": "https://Millamarianna.github.io/tt_app",
+  "homepage": "https://Millamarianna.github.io/",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
