@@ -28,7 +28,7 @@ jobs:
       - name: Build And Deploy
         id: builddeploy
         run: |
-          # Set CI to false for the build step
+          npm install
           CI=false npm run build
 
       - name: Deploy to Azure Static Web Apps
