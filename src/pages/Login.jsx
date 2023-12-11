@@ -6,7 +6,7 @@ import cookie from 'cookie'
 
 const Login = () => {
   const [apiError, setApiError] = useState();
-  const { setAuth } = useAuth();
+  const { isLoggedIn, setLoggedIn, setAuth } = useAuth();
   const cookie = require('cookie');
   let navigate = useNavigate();
 
@@ -25,11 +25,12 @@ const Login = () => {
       console.log("getUserData:" + userData);
       userData["token"] = token;
       setAuth((prevAuth) => {
+        console.log("Login: Authprovider, getuserdata, if response ok, previous auth:" + JSON.stringify(prevAuth));
         console.log("Login: getUserData:" + JSON.stringify(userData));
-        userData["token"] = token;
-        console.log("Login: Authprovider, getuserdata, if response ok, auth:" + JSON.stringify(prevAuth));
+        userData["token"] = token; 
         return userData;
       });
+      setLoggedIn(true)
       setApiError(null);
       navigate("/", { replace: true });
     }
@@ -64,7 +65,6 @@ const Login = () => {
           path: '/',
           sameSite: 'strict',
           maxAge:  30 * 24 * 60 * 60,
-
         }
       )
       getUserData(jwt);
