@@ -116,6 +116,8 @@ ttfrontend
 │  │  │  ├─ 0d6c77ac21bb2ef88a6992b2b73ad93daaca92
 │  │  │  ├─ 41662686ebe7fb5970ae3583470f4b9a3e58b1
 │  │  │  └─ b95ee148802355103d357b71622287c1d18821
+│  │  ├─ 09
+│  │  │  └─ 17dfba0bb315400af6a30ed62b44c51b90c206
 │  │  ├─ 0b
 │  │  │  ├─ 44c76d9c016b912d5a334c7a7ca421db9c042b
 │  │  │  └─ c0998bb3036f11dbb78a947645b44d1a9c8d04
@@ -132,12 +134,17 @@ ttfrontend
 │  │  │  └─ 6e3555964615aa168ede6fe93f7d63df0e5e05
 │  │  ├─ 15
 │  │  │  ├─ 5e80135be76df381e3b888b59251fbde22d47c
+│  │  │  ├─ d2f71d3d1211fb9373835d33434c1cee2b1d64
 │  │  │  └─ e6b91ca9c7b07b9950a2be9406e243b6348406
 │  │  ├─ 16
 │  │  │  ├─ 83efdc88fcd47ea7478f6bae88f0c3e73a7744
 │  │  │  └─ c1ed36d3729552c0a82846db953bbd3ef48035
 │  │  ├─ 17
+│  │  │  ├─ 05349dd2f94568820feccd138649ae815d31f7
 │  │  │  └─ bbcb613f114fad4fd8e7e7efa6ec40bdb168cf
+│  │  ├─ 19
+│  │  │  ├─ 997bbbe3d5cb940903c77660f1f48b8caac625
+│  │  │  └─ ff29d1faa79bb5022557556086af35ec549305
 │  │  ├─ 1a
 │  │  │  └─ bdaa59e3ebcaf5ed336fb4f7f26e04ec2032be
 │  │  ├─ 1b
@@ -167,7 +174,8 @@ ttfrontend
 │  │  │  └─ ffce7a39c663e804a372cf25e869b0518fce74
 │  │  ├─ 32
 │  │  │  ├─ 07f92473088def88f9839abfb397bcda777259
-│  │  │  └─ 681c1ca5a1324e5247bdf63eeaf90092a0f509
+│  │  │  ├─ 681c1ca5a1324e5247bdf63eeaf90092a0f509
+│  │  │  └─ a17c751c6fc2835dd41f976c25f7f77d7905ca
 │  │  ├─ 33
 │  │  │  └─ 8d86eeb7e41aa6df4da282a102337607ce41cd
 │  │  ├─ 35
@@ -175,6 +183,7 @@ ttfrontend
 │  │  │  ├─ dfbfb5e1317ecf9d433a6ea0bec3463ee4ef1b
 │  │  │  └─ f329da46366baff22532f08d2cdc31559be115
 │  │  ├─ 37
+│  │  │  ├─ 002a0d7d6439040042d30867d75bc89dca5c05
 │  │  │  ├─ 1179a076f9e9bc58af47fa23e896100d819c54
 │  │  │  ├─ 845757234ccb68531c10cf7a2ffc589c47e342
 │  │  │  └─ d1b7b922db75144a5a6e33b90d3ecb83d90f66
@@ -188,14 +197,21 @@ ttfrontend
 │  │  │  └─ 8d38e2d5a9938de76dca3df933969ec60f8b19
 │  │  ├─ 3e
 │  │  │  └─ 6c080db8e73ccec690e793b5945762ab4931f0
+│  │  ├─ 3f
+│  │  │  └─ ee39533a37d8f6b4a19028bf3980dfceb58eb6
+│  │  ├─ 42
+│  │  │  └─ 0ba7c27c2278bdfa5aac04f33677e1ee1eb36d
 │  │  ├─ 44
 │  │  │  └─ 4ce6dc1dc9f77d1348f827ec8782c2e2df508e
 │  │  ├─ 45
+│  │  │  ├─ 5ed18446cca3009e44b7669138ff5673d0cfc4
 │  │  │  ├─ 68b1b9d96cd0715d834c9fe547a9ac8e2bfc84
 │  │  │  └─ c21399228076daf740a220beb774dda2a1e4a3
 │  │  ├─ 46
 │  │  │  ├─ 8d6447a4af36854ae17e14a6c950b96d71f0c2
 │  │  │  └─ b567d4a965e77d93435acdd5acee65d8e60d23
+│  │  ├─ 47
+│  │  │  └─ cad3ef7cb131492a22ae1c9ecf5511a76d6b4e
 │  │  ├─ 4b
 │  │  │  ├─ 71a282cf9406cb9c315fe9c084179666c86d10
 │  │  │  └─ b4c61d5684dc1c49f657de3800c0fbc34158e5
@@ -205,27 +221,37 @@ ttfrontend
 │  │  │  ├─ 29575de80483b005c29bfcac5061cd2f45313e
 │  │  │  └─ fe555f652d51cc7101589c21fdfc06ed89e754
 │  │  ├─ 4e
-│  │  │  └─ 456f15b60f05635e41927199d658ec9ababe5e
+│  │  │  ├─ 456f15b60f05635e41927199d658ec9ababe5e
+│  │  │  └─ 47c975e813f5d20855c0f10b5868aecfc84156
+│  │  ├─ 50
+│  │  │  └─ fa9f77d3f549eac97ee0e99e03c99caef53c0c
 │  │  ├─ 51
 │  │  │  └─ 823c6712cc2506845c06d35d2d43fb846d52c5
 │  │  ├─ 52
 │  │  │  └─ 53d3ad9e6be6690549cb255f5952337b02401d
+│  │  ├─ 56
+│  │  │  └─ 1ba54bdba17d58ee50330732591551d2803e7c
 │  │  ├─ 58
 │  │  │  └─ beeaccd87e230076cab531b8f418f40b6d1aeb
 │  │  ├─ 5a
+│  │  │  ├─ 198c07773750b90e213fe0037087fece05560c
 │  │  │  ├─ a02af808c52bed5aed8c63a3cb7ec0ab52e7ac
 │  │  │  ├─ bb72d7c642cdf4ebe24d45f2514140a6850dd3
 │  │  │  └─ e36a91a69ef20250e3da5c0a885464dba866de
 │  │  ├─ 61
-│  │  │  └─ 3a2d015fe742eeea2696fffc36952e7440e482
+│  │  │  ├─ 3a2d015fe742eeea2696fffc36952e7440e482
+│  │  │  └─ e9fbdd205de67ce004649bf3bac4542614f5b8
 │  │  ├─ 64
 │  │  │  └─ 33e2ca8d2a143d6544e73f92ad806dbc505c38
 │  │  ├─ 65
-│  │  │  └─ 3614982b299a4bb408095172dfc0753f640823
+│  │  │  ├─ 3614982b299a4bb408095172dfc0753f640823
+│  │  │  └─ 5bc1727a7f9d692dd5ff8a6ac2ce2dd466eddb
 │  │  ├─ 66
 │  │  │  └─ 5537d2c99499cef06500481685089534beb8c7
 │  │  ├─ 67
 │  │  │  └─ 426514394136aba14be19d8054d4b53dc05838
+│  │  ├─ 68
+│  │  │  └─ 85a55f71e31d8e67e65446a849e3ee9aee257a
 │  │  ├─ 69
 │  │  │  └─ 221b5d6c57a4a9bb7bb7d609139471df8ef34a
 │  │  ├─ 6a
@@ -247,6 +273,8 @@ ttfrontend
 │  │  │  └─ e4b768b4265a66d05696ca2834ff279b071b65
 │  │  ├─ 77
 │  │  │  └─ 3066477182871015cff73d7dcc032c509036f0
+│  │  ├─ 78
+│  │  │  └─ 121d114251da69bc809e11bb25e37b373d6137
 │  │  ├─ 7b
 │  │  │  └─ 1e172334cdc980bee9ad6a8a87cf21e0ed18d8
 │  │  ├─ 7c
@@ -254,9 +282,17 @@ ttfrontend
 │  │  ├─ 7e
 │  │  │  ├─ 583515aad484b279e0a5826b4761555f1d871c
 │  │  │  └─ 9d83d76f6fcdf97c326bec48bae3d0250102d7
+│  │  ├─ 80
+│  │  │  └─ 9d511d4726240795b6277e3e61c49cd091ac54
 │  │  ├─ 83
 │  │  │  ├─ 016e5f64f049b90db9a9ccc1bbba75b5317896
+│  │  │  ├─ a4c22ff6d32497730a7d44a56d40a4802ae7fa
 │  │  │  └─ ad558e24b1df96e197efa181852afd43bf7223
+│  │  ├─ 85
+│  │  │  └─ 289d1d5f7fa65f60fe51278d2b7dc11cda9efa
+│  │  ├─ 8a
+│  │  │  ├─ 9d0e27e9aaf258072b919e82a6a3a7896ca02c
+│  │  │  └─ b11232b85999421b2b5646b3281ebcba8cacd5
 │  │  ├─ 8c
 │  │  │  ├─ 2f3d753b2d74622ce611f7dd6478f274a0f991
 │  │  │  └─ fde0a6b8a4f6e0dbc39a23c388113f108da6ee
@@ -267,6 +303,11 @@ ttfrontend
 │  │  │  └─ fb59e1d64a73d6c1bd852616b6cacf20c8f472
 │  │  ├─ 8f
 │  │  │  └─ 2609b7b3e0e3897ab3bcaad13caf6876e48699
+│  │  ├─ 90
+│  │  │  ├─ 787e0daa24e7670b85b0daa6597767db521e62
+│  │  │  └─ 919d072fc24df964fa555e8ca8c322a259f8b9
+│  │  ├─ 91
+│  │  │  └─ d690f71315156ab29ef59666556c1236b1996a
 │  │  ├─ 92
 │  │  │  └─ d3f096299b47ca89376137f001cc9ad1dd39cc
 │  │  ├─ 93
@@ -277,11 +318,15 @@ ttfrontend
 │  │  │  └─ 728ac101656b5c4b057dca65985ec888bb590c
 │  │  ├─ 9a
 │  │  │  └─ f549addd8be404e7c9aab20c8231b28abf52eb
+│  │  ├─ 9b
+│  │  │  └─ a7397a3edfc6320f2d13552fa203479713707e
 │  │  ├─ 9d
 │  │  │  ├─ 210ce3646388dbb41d91190de89d629d7e6a4f
 │  │  │  └─ fc1c058cebbef8b891c5062be6f31033d7d186
 │  │  ├─ a1
 │  │  │  └─ 1777cc471a4344702741ab1c8a588998b1311a
+│  │  ├─ a2
+│  │  │  └─ 37fc64b9e4e6e052b125357657726d89300448
 │  │  ├─ a3
 │  │  │  └─ 49170f40da43aad22cc7ae2437bd32d6b22cb9
 │  │  ├─ a4
@@ -291,7 +336,8 @@ ttfrontend
 │  │  ├─ a9
 │  │  │  ├─ 59038507a6f02d5b76b1bab9a62e9cb40552a3
 │  │  │  ├─ 84a3efdaafa4bc35d789de84ddc4137fab168e
-│  │  │  └─ 9178040cc2fe1cacd37b9b178b86653700c939
+│  │  │  ├─ 9178040cc2fe1cacd37b9b178b86653700c939
+│  │  │  └─ e7e86dff0bf1fc8f4e94e839c8390eb8ab3ace
 │  │  ├─ aa
 │  │  │  └─ 069f27cbd9d53394428171c3989fd03db73c76
 │  │  ├─ ab
@@ -306,8 +352,17 @@ ttfrontend
 │  │  │  └─ 5bb5ed48a0e7ec9eb6c31abc8d26d1c4f85443
 │  │  ├─ b4
 │  │  │  └─ 6028349c147998acfc33c8fbe51c80d13822a6
+│  │  ├─ b5
+│  │  │  └─ 567c2b949ac59ed38ce6248ac7b55e49de936f
 │  │  ├─ b8
+│  │  │  ├─ be667c45c4fabb1fbe91feaed3bacc123de0e4
 │  │  │  └─ f2a1fe05cffeeb69e089c553b3150507d15c9b
+│  │  ├─ ba
+│  │  │  └─ aa83dabeede086fe726eab1e74040bd9300be2
+│  │  ├─ bb
+│  │  │  └─ 8f1fd918f86eaa9dfcaed6bf1ef98f4fbb9019
+│  │  ├─ bc
+│  │  │  └─ 3cfd4eafebc252072c1658f819a7e7c1a5946b
 │  │  ├─ bd
 │  │  │  └─ 68e839e06b9a1c051524478fa8fa50d82925b2
 │  │  ├─ c2
@@ -318,17 +373,20 @@ ttfrontend
 │  │  │  ├─ 3c4df66c12c6072b2be8582ab53d24f987cc36
 │  │  │  └─ d62ea4e5d0314ac18fb2b5c0fa6ecdd98073f9
 │  │  ├─ c6
-│  │  │  └─ 729edb5e26a32d261ee1919f600b4a0ba6b02d
+│  │  │  ├─ 729edb5e26a32d261ee1919f600b4a0ba6b02d
+│  │  │  └─ d5512804146620e7d7fb115cb6e48c3a7ad2b1
 │  │  ├─ c8
 │  │  │  └─ 6d88bdfbc8d599cae6fffe38fb8a6d82bfccef
 │  │  ├─ ca
-│  │  │  └─ 09f6f84d9f8a77204e1a0dbecde0966bee22b4
+│  │  │  ├─ 09f6f84d9f8a77204e1a0dbecde0966bee22b4
+│  │  │  └─ 52db320e32f24d7cb1b48ea3c9223aa41833cd
 │  │  ├─ cc
 │  │  │  └─ 3e043e477d9c2527f6472017fbcb58c1c83044
 │  │  ├─ cd
 │  │  │  └─ 6eeeed5f6790db26250407fbc9ff407ee0a589
 │  │  ├─ cf
-│  │  │  └─ 24f02c2ea39670e88e18c3a6f8f23490a42b65
+│  │  │  ├─ 24f02c2ea39670e88e18c3a6f8f23490a42b65
+│  │  │  └─ d970825fa8452bf620408de2f52e9f50ca3bc5
 │  │  ├─ d0
 │  │  │  └─ be893b4a18c105c6fbb9d41456bca7f8e88e2a
 │  │  ├─ d1
@@ -352,21 +410,33 @@ ttfrontend
 │  │  │  ├─ a4dd78ed40c2dfad239a137c9ed916c7c505ab
 │  │  │  ├─ d787642dc433d1304a98a0b31f969f1088e34c
 │  │  │  └─ e284cb3cafbffad0bdf94066e726d3b70fc188
+│  │  ├─ d9
+│  │  │  └─ 4acd140dd99e7cb2001a17b7c81fc5d1d4f604
 │  │  ├─ da
-│  │  │  └─ 02e63a545d2ab9208040fa068868d4adb42c41
+│  │  │  ├─ 02e63a545d2ab9208040fa068868d4adb42c41
+│  │  │  └─ fa587fa5c55f67d0503fdafaf55c7b435713c8
+│  │  ├─ dc
+│  │  │  └─ db28e86f650d712c72a38b94bbbd928f88fa23
 │  │  ├─ de
+│  │  │  ├─ 1eb2c1382bd6fe176013c73c2cdbf8dfc55d0d
 │  │  │  └─ a3616c9ea468082e5a933fa3f807bd77dba2d9
+│  │  ├─ df
+│  │  │  └─ 0f5de12d36a0d2078bc070f3d0001c55ceefc8
 │  │  ├─ e0
 │  │  │  └─ 1b198eb3ffc2faee59bb9e9b76f990f547cce5
 │  │  ├─ e1
 │  │  │  └─ d622ddf0aaa5f55b5b89d0823a64a8d73f6d18
 │  │  ├─ e3
 │  │  │  └─ d69a3b772dd28f072ce3e992a9b6725157c3cd
+│  │  ├─ e5
+│  │  │  └─ ae87b2c80ba16df889050d3f6ba34ad4fab542
 │  │  ├─ e6
+│  │  │  ├─ 7c48884a47fcae6b29f42e966eed6182ea6785
 │  │  │  └─ 9de29bb2d1d6434b8b29ae775ad8c2e48c5391
 │  │  ├─ e8
 │  │  │  └─ cc11bf7a843ff781373e900e8401c8fac2b352
 │  │  ├─ e9
+│  │  │  ├─ 519d18602719cc79f3561fbd047c30573b2cad
 │  │  │  ├─ e57dc4d41b9b46e05112e9f45b7ea6ac0ba15e
 │  │  │  └─ f3daf64f75dfa6e2b94b4738158291f9a2650d
 │  │  ├─ ea
@@ -374,11 +444,15 @@ ttfrontend
 │  │  ├─ eb
 │  │  │  └─ 0103f1affbeabf812a85b12dd4114e3065e506
 │  │  ├─ ec
-│  │  │  └─ 2585e8c0bb8188184ed1e0703c4c8f2a8419b0
+│  │  │  ├─ 2585e8c0bb8188184ed1e0703c4c8f2a8419b0
+│  │  │  └─ 6d3b11323e981d510bc5693dbbd3de28623d63
 │  │  ├─ ed
 │  │  │  └─ 61be99fda33a08cc4451a210d8ac2f59180ba0
+│  │  ├─ ef
+│  │  │  └─ fad2cc6d59bcd0962bd290bcd0ea0a61de614b
 │  │  ├─ f4
 │  │  │  ├─ 10fc5cc2234b6fa1b52bfdffede085f7dc8a6c
+│  │  │  ├─ 3dc23d44deefd3fed384c3b2fdc5b9422515ee
 │  │  │  └─ dd0605dc94b43f198999bf6f414065647a46be
 │  │  ├─ fc
 │  │  │  ├─ 2d4589833f0de8babdd1f3b837578cee28375c
@@ -420,15 +494,25 @@ ttfrontend
 │  ├─ components
 │  │  ├─ Footer.js
 │  │  ├─ Header.js
-│  │  └─ Layout.js
+│  │  ├─ Layout.js
+│  │  └─ RequireAuthentication.jsx
+│  ├─ context
+│  │  └─ AuthProvider.js
+│  ├─ hooks
+│  │  └─ useAuth.js
 │  ├─ index.css
 │  ├─ index.js
 │  ├─ logo.svg
-│  ├─ reportWebVitals.js
-│  ├─ screens
+│  ├─ pages
+│  │  ├─ Admin.js
 │  │  ├─ AdminCustomers.js
-│  │  ├─ AdminHome.js
-│  │  └─ Home.js
+│  │  ├─ api
+│  │  │  └─ login.js
+│  │  ├─ Home.js
+│  │  ├─ Login.jsx
+│  │  ├─ NoPage.js
+│  │  └─ Register.jsx
+│  ├─ reportWebVitals.js
 │  └─ setupTests.js
 └─ staticwebapp.config.json
 

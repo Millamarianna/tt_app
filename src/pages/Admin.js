@@ -1,6 +1,6 @@
 
 
-const AdminHome = () => {
+const Admin = () => {
 
   
   return (
@@ -10,4 +10,4 @@ const AdminHome = () => {
 
 }
 
-export default AdminHome
+export default Admin
