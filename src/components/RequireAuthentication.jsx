@@ -5,7 +5,7 @@ const RequireAuthentication = () => {
   const { isLoggedIn, auth } = useAuth();
   console.log("requireauth:" + JSON.stringify(auth));
 
-  return isLoggedIn && auth.first_name ? <Outlet /> : <Navigate to="/login" />;
+  return isLoggedIn && auth.role=="admin" ? <Outlet /> : <Navigate to="/login" />;
 };
 
 export default RequireAuthentication;

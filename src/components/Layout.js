@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {  useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -9,7 +9,7 @@ import { BiSolidLockOpen } from "react-icons/bi";
 import useAuth from "../hooks/useAuth";
 
 const Layout = () => {
-  const { isLoggedIn, setLoggedIn, setAuth } = useAuth();
+  const { isLoggedIn, setLoggedIn, auth, setAuth } = useAuth();
 
   useEffect(() => {
     // Check if the JWT token exists in the cookie
@@ -19,7 +19,7 @@ const Layout = () => {
     } else {
       setLoggedIn(false);
     }
-  }, [isLoggedIn]); // Run the effect only once on component mount
+  }, [isLoggedIn]); 
 
   const logout = () => {
     // Perform logout actions
@@ -36,22 +36,39 @@ const Layout = () => {
     <>
       <Navbar bg="dark" data-bs-theme="dark" expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="/">Terapiaterttu</Navbar.Brand>
+          <Navbar.Brand href="/">Terapiaterttu </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/">Etusivu</Nav.Link>
-              <Nav.Link as={Link} to="/customers">Asiakkaat</Nav.Link>
-              {isLoggedIn ? (
+              <Nav.Link as={Link} to="/page1">Tietosivu</Nav.Link>
+              <Nav.Link as={Link} to="/">Linkki</Nav.Link>
+              <Nav.Link as={Link} to="/">Linkki</Nav.Link>
+            </Nav>
+            {isLoggedIn && auth.role=="admin"  ? (
+              <Nav className="me-auto">
+                <Nav.Link as={Link} to="/customers">Asiakkaat</Nav.Link>
+                <Nav.Link as={Link} to="/appointments">Ajanvaraukset</Nav.Link>
+                <Nav.Link as={Link} to="/createappointments">Tee uusi ajanvaraus</Nav.Link>
+              </Nav>
+            ) : null}
+            <Nav className="ms-auto">
+              {isLoggedIn && auth.first_name ? (
+                <Navbar.Text>
+                  Hei {auth.first_name}!
+                </Navbar.Text>) : null}
+              {isLoggedIn && auth.first_name ? (
                 <NavDropdown title={<BiSolidLockOpen />} id="basic-nav-dropdown">
                   <NavDropdown.Item onClick={logout}>Kirjaudu ulos</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">Käyttäjätiedot</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/user">Käyttäjätiedot</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/appt">Ajanvaraukset</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/createappt">Varaa uusi aika</NavDropdown.Item>
                 </NavDropdown>
               ) : (
                 <NavDropdown title={<BiSolidLock />} id="basic-nav-dropdown">
                   <NavDropdown.Item as={Link} to="/login">Kirjaudu sisään</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Rekisteröidy käyttäjäksi</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/register">Rekisteröidy käyttäjäksi</NavDropdown.Item>
                 </NavDropdown>
               )}
             </Nav>

@@ -8,7 +8,12 @@ import RequireAuthentication from './components/RequireAuthentication';
 import Admin from './pages/Admin';
 import Login from './pages/Login';
 import Register from './pages/Register';
-
+import User from './pages/User';
+import UserAppt from './pages/UserAppt';
+import AdminAppointments from './pages/AdminAppointments';
+import AdminCreateAppointments from './pages/AdminCreateAppointments';
+import UserCreateAppt from './pages/UserCreateAppt';
+import Page1 from './pages/Page1';
 
 function App() {
   return (
@@ -17,13 +22,19 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="page1" element={<Page1 />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="*" element={<NoPage />} />
 
           <Route element={<RequireAuthentication />}>
+            <Route path="user" element={<User />} />
+            <Route path="appt" element={<UserAppt />} />
+            <Route path="createappt" element={<UserCreateAppt />} />
             <Route path="admin" element={<Admin />} />
             <Route path="customers" element={<AdminCustomers />} />
+            <Route path="appointments" element={<AdminAppointments />} />
+            <Route path="createappointments" element={<AdminCreateAppointments />} />
           </Route>
         </Route>
       </Routes>
