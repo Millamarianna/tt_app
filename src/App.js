@@ -14,6 +14,7 @@ import AdminAppointments from './pages/AdminAppointments';
 import AdminCreateAppointments from './pages/AdminCreateAppointments';
 import UserCreateAppt from './pages/UserCreateAppt';
 import Page1 from './pages/Page1';
+import Page2 from './pages/Page2';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="page1" element={<Page1 />} />
+          <Route path="page2" element={<Page2 />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="*" element={<NoPage />} />

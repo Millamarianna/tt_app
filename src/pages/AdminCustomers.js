@@ -119,7 +119,7 @@ const AdminCustomers = () => {
 
   return (
     <div>
-      <p>Asiakkaat</p>
+      <p></p>
       <Table striped bordered hover>
         <thead>
           <tr>

@@ -6,7 +6,11 @@ import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import { set } from 'react-hook-form';
+import { Image } from "react-bootstrap";
+import homecta1 from '../assets/homecta1.png';
+import homecta2 from '../assets/homecta2.png';
+import homecta3 from '../assets/homecta3.png';
+import { PiArrowBendUpRightBold } from "react-icons/pi";
 
 const Home = () => {
 
@@ -62,7 +66,7 @@ const Home = () => {
       const result = await response.json();
       console.log("onnistui");
       setShow(false);
-      setTextToEdit({"_id": "", "page": "home", "header": "", "body": [""], "type": "", "date": "", "time": "", "duration": "", "show": ""});
+      setTextToEdit({ "_id": "", "page": "home", "header": "", "body": [""], "type": "", "date": "", "time": "", "duration": "", "show": "" });
       setFetchAgain(fetchAgain + 1);
     } else {
       let errorResponse = await response.json();
@@ -85,7 +89,7 @@ const Home = () => {
   const handleBodyInputChange = (e) => {
     const { name, value } = e.target;
     setTextToEdit({ ...textToEdit, body: [...textToEdit.body.slice(0, name), value, ...textToEdit.body.slice(parseInt(name) + 1)] });
-    
+
   };
 
   const add = () => {
@@ -103,32 +107,36 @@ const Home = () => {
 
   return (
     <>
-      {loading ? (<div>loading...</div>) :
-        (<Container>
-          <Row>
-            <Col sm={8}>
-              <p><b>{texts.find(x => x._id === "657c43a2ea1d95a5fc6c4092").header}</b></p>
-              {texts.find(x => x._id === "657c43a2ea1d95a5fc6c4092").body.map((data) => {
-                return (
-                  <div id={data.toString()}>
-                    {data}
-                  </div>
-                )
-              })}
-              {isLoggedIn && auth.role == "admin" ?
-                (<Button id="657c43a2ea1d95a5fc6c4092" variant="danger" onClick={(e) => edit(e)}>
-                  Muokkaa
-                </Button>)
-                : null}
+      {loading ? (<div  className="logofont">hetki...</div>) :
+        (<Container class="container-fluid" style={{ marginTop: '3vh' }}>
+          <Row style={{ paddingTop: '0.5vh' }}>
+            <Col sm={4}>
+              <Button className='btn float-end button' size="lg">
+              Oletko valmis löytämään tasapainoa elämääsi?<br/> {<PiArrowBendUpRightBold />} <u>Tutustu minuun</u> ja tarjoamiini palveluihin tarkemmin. Yhdessä löydämme sinulle parhaiten sopivan tuen.
+              </Button>
+            </Col>
+            <Col sm={4} style={{alignSelf: 'flex-end' }}>
+              <Image src={homecta2} fluid />
             </Col>
             <Col sm={4}>
-
+            <Button className='btn float-end button' size="lg">
+            Aloita matkasi kohti parempaa hyvinvointia.<br/> {<PiArrowBendUpRightBold />} <u>Varaa aika</u> yksityiseen ja luottamukselliseen keskusteluun. 
+              </Button>
             </Col>
           </Row>
-          <Row>
-            <Col sm>Etiam non dui nulla. Nullam at tempor urna. Praesent sed eros metus. Quisque semper, leo eu pretium ullamcorper, augue lectus sodales sem, eu tristique metus justo a turpis. Phasellus egestas mi vitae nunc eleifend, quis mattis dui vehicula. Phasellus a lorem gravida, sollicitudin purus venenatis, cursus arcu. Nullam in euismod nibh. Sed tristique dolor arcu, eget cursus nisi tincidunt sed. Nulla posuere massa in lectus mollis, ut egestas est aliquam. Vestibulum bibendum, mi ut mattis condimentum, augue leo eleifend enim, non dictum nisl erat a risus. Suspendisse auctor, lectus ac semper vestibulum, eros orci commodo nulla, ut porta magna metus ut dolor. Maecenas pharetra turpis vitae nibh commodo, luctus porttitor magna rhoncus. Phasellus hendrerit sagittis erat, a congue magna imperdiet at. Sed congue rutrum malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed cursus, nunc at gravida dignissim, tortor arcu pellentesque ipsum, non semper augue orci quis lorem. </Col>
-            <Col sm>Mauris elementum ligula velit, et luctus mauris lobortis et. Integer leo metus, molestie non consequat et, rutrum quis massa. Aliquam semper nulla mi, id eleifend ante consequat quis. Vestibulum varius hendrerit massa et maximus. In laoreet accumsan condimentum. Duis libero lorem, ultricies commodo pharetra vitae, malesuada non elit. Donec iaculis, nisl nec condimentum suscipit, elit mauris imperdiet lacus, vitae sollicitudin purus urna vitae ipsum. Duis et luctus erat, at varius ipsum. </Col>
-            <Col sm>Praesent sit amet volutpat urna. Sed non auctor urna. Quisque aliquam sit amet leo vel ornare. Morbi ut ante nisi. Phasellus purus enim, tincidunt vel hendrerit vitae, sollicitudin eget sapien. Etiam bibendum mollis tincidunt. Nulla vitae maximus tortor. Integer consectetur quis ligula nec cursus. Nulla nisl magna, rutrum a luctus sit amet, commodo sed arcu. Aliquam eu efficitur nulla. Ut tristique tellus nec lacinia sollicitudin. Nam non mattis turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </Col>
+          <Row style={{ paddingBottom: '0.5vh' }}>
+            <Col sm={4}>
+              <Image src={homecta1} fluid />
+            </Col>
+            <Col sm={4}>
+            <Button className='btn float-end button' size="lg">
+            {<PiArrowBendUpRightBold />} <u>Tutustu työkaluihin</u> ja resursseihin, jotka voivat ohjata parempaan itsetuntemukseen ja myönteisiin muutoksiin elämässäsi.
+            
+              </Button>
+            </Col>
+            <Col sm={4}>
+              <Image src={homecta3} fluid />
+            </Col>
           </Row>
         </Container>)}
       <Modal show={show} onHide={handleClose}>
@@ -151,7 +159,7 @@ const Home = () => {
               )
             })}
             <Button variant="secondary" onClick={add}>Lisää tekstikappale</Button>
-            
+
           </Form>
         </Modal.Body>
         <Modal.Footer>
