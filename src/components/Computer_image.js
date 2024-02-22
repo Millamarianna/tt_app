@@ -38,7 +38,7 @@ const Computer_image = () => {
 
     const imageStyle = {
         position: 'absolute',
-        bottom: '1%',
+        bottom: '10vh',
         left: '0%',
         height: y < x ? 'auto' : '40vh',
         width: y < x ? '90vw' : 'auto',
