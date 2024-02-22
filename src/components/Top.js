@@ -9,6 +9,7 @@ import Toast from 'react-bootstrap/Toast';
 
 const Top = () => {
     const size = useWindowSize();
+    console.log("leveys: " + size.width +", korkeus: " + size.height)
     const loistaa_aspectRatio = 812 / 151;
     const header_aspectRatio = 762 / 60;
     const typewriter_aspectRatio = 967 / 31;
@@ -56,7 +57,7 @@ const Top = () => {
 
                 
 
-                <Row className="text-center" style={{ alignItems: 'center', justifyContent: 'center' }}>
+                <Row className="text-center line-animation" style={{ alignItems: 'center', justifyContent: 'center' }}>
                     <Col xs={12} className="blaketon" style={loistaaStyle}>
                         Loistaa Consulting
                     </Col>
@@ -66,11 +67,7 @@ const Top = () => {
 
                 </Row>
 
-                <Row className="line-animation" >
-                    <Col>
-                    </Col>
-                </Row>
-
+                
                 {size.width < 500 ?
                     (<><Row className="typed-out-container text-center" style={{ marginTop: '2vh' }}>
                         <Col className="typewriter" style={typewriterStyle_sm}>APUA IDEASTA JULKAISUUN. </Col>

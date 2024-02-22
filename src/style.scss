@@ -7,7 +7,7 @@ $background-color: #f1efeb;
 
 html,body {
   background-image: linear-gradient(#f1efeb, #f1efeb 50%, #4c4c4c 50%, #4c4c4c); 
-  
+  width: 100vw;
   margin: 0;
   font-family: $fonts; 
   font-weight: 400;
@@ -99,14 +99,26 @@ color: $font-color;
   height: 50vh;
   }
 
-.line-animation { 
-  width: 100%; 
-  height: 0.25vw; 
-  background: $font-color; 
-  position: relative; 
-  transform: translate(0%, 100%); 
-  } 
-
+  .line-animation {
+    position: relative;
+  }
+  
+  .line-animation::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0.25vw;
+    background-color: $font-color; /* Change the color as needed */
+    animation: line-animate 3s ease-out 0.5s forwards;
+  }
+  
+  @keyframes line-animate {
+    100% {
+      width: 100%;
+    }
+  }
 
 .button {
   background-color: #f1efeb;
@@ -139,16 +151,7 @@ color: $font-color;
   }
   
   
-.line-animation::before { 
-    content: ""; 
-    display: inline-block;
-    position: relative; 
-    width: 100%; 
-    height: 100%; 
-    background: $background-color; 
-    animation: line-animate 3s linear forwards; 
-    animation-delay: 3s;
-} 
+
 
 .typed-out-container{
     display: inline-block;
@@ -176,20 +179,10 @@ color: $font-color;
   }
   
 
-@keyframes line-animate { 
-    0% { 
-        left: 0; 
-    } 
 
-    100% { 
-        left: 100%; 
-    } 
-
-} 
 
   .animate {
     animation-duration: 0.75s;
-    animation-duration: 1s; //running slower to show effect
     animation-delay: 0.5s;
     animation-name: animate-fade;
     animation-timing-function: cubic-bezier(.26,.53,.74,1.48);
