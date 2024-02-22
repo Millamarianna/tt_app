@@ -1,20 +1,26 @@
 html, body {
   height: 100%;
-  background-color: #000000;
+  background: linear-gradient(to bottom right, #ffffff 0%, #e6eff1 100%);
   margin: 0;
-  font-family: haboro-soft, sans-serif; 
+  font-family: "bitter", serif;
   font-weight: 400;
   font-style: normal;
-  color: #FFFF33;
+  color: #2e332d;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.blaketon {
-  font-family: mrblaketon-pro, sans-serif;
+@font-face {
+  font-family: "Freestyle Script Regular";
+  src: local('Freestyle Script Regular'), url('./assets/FREESCPT.woff') format('woff');
+}
+
+.logofont {
+  font-family: "Freestyle Script Regular", serif;
   font-weight: 400;
   font-style: normal;
-  color: #FFFF33;
+  color: #2e332d;
+  font-size: 26px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

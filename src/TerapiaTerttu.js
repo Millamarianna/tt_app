@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import WebDesign from "./pages/WebDesign";
-import Front from './components/Front';
+import Home from "./pages/Home";
+import Layout from './components/Layout';
 import NoPage from "./pages/NoPage";
 import AdminCustomers from "./pages/AdminCustomers";
 import RequireAuthentication from './components/RequireAuthentication';
@@ -15,15 +15,14 @@ import AdminCreateAppointments from './pages/AdminCreateAppointments';
 import UserCreateAppt from './pages/UserCreateAppt';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
-import Packages from './pages/Packages';
 
-function App() {
+function TerapiaTerttu() {
   return (
 
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Front />}>
-          <Route index element={<Packages />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
           <Route path="page1" element={<Page1 />} />
           <Route path="page2" element={<Page2 />} />
           <Route path="login" element={<Login />} />
@@ -47,4 +46,4 @@ function App() {
 }
 
 
-export default App;
+export default TerapiaTerttu;
