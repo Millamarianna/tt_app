@@ -86,11 +86,11 @@ const Packages = () => {
                     </Col>
                 </Row>
                 <Row style={{ width: '95vw', }}>
-                    <Col xs={12} lg={6}>
+                    <Col xs={12} xxl={6}>
                         <p style={pStyle}>{description[index]}</p>
                         <Button className='btn button' size="sm" style={{ marginTop: '20px' }}>Pyydä tarjous!</Button>
                     </Col>
-                    <Col xs={12} lg={6}>
+                    <Col className="d-none d-xxl-block" xxl={6}>
                         <p style={pStyle}><ul>{listItems(index)}</ul></p>
                     </Col>
                 </Row>

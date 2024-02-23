@@ -47,7 +47,7 @@ const Top = () => {
                     }}>web@loistaa.fi {<IoCopyOutline />}</div>
 
                 <div className="typewriter"
-                    style={{ position: 'absolute', top: '5%', right: '2%', fontSize: 'calc(14px + (21 - 14) * ((100vw - 300px) / (1600 - 300)))', }}>
+                    style={{ position: 'absolute', top: '5%', right: '2%', maxWidth: '50%', fontSize: 'calc(14px + (21 - 14) * ((100vw - 300px) / (1600 - 300)))', }}>
                     <Toast onClose={() => setShow(false)} show={show} delay={2000} autohide>
                         
                             Kopioitu leikepöydälle!
@@ -68,16 +68,15 @@ const Top = () => {
                 </Row>
 
                 
-                {size.width < 500 ?
-                    (<><Row className="typed-out-container text-center" style={{ marginTop: '2vh' }}>
-                        <Col className="typewriter" style={typewriterStyle_sm}>APUA IDEASTA JULKAISUUN. </Col>
+                <Row className="typed-out-container text-center" style={{ marginTop: '2vh' }}>
+                        <Col className="d-sm-none d-block typewriter" style={typewriterStyle_sm}>APUA IDEASTA JULKAISUUN. </Col>
                     </Row>
                         <Row className="typed-out-container text-center">
-                            <Col className="typed-out typewriter" style={typewriterStyle_sm}>JÄTÄ KOODAUS MINULLE.</Col>
-                        </Row></>)
-                    : (<Row className="typed-out-container text-center" style={{ marginTop: '2vh' }}>
-                        <Col className="typed-out typewriter" style={typewriterStyle}>APUA IDEASTA JULKAISUUN. JÄTÄ KOODAUS MINULLE.</Col>
-                    </Row>)}
+                            <Col className="d-sm-none d-block typed-out typewriter" style={typewriterStyle_sm}>JÄTÄ KOODAUS MINULLE.</Col>
+                        </Row>
+                    <Row className="typed-out-container text-center" style={{ marginTop: '2vh' }}>
+                        <Col className="d-none d-sm-block typed-out typewriter" style={typewriterStyle}>APUA IDEASTA JULKAISUUN. JÄTÄ KOODAUS MINULLE.</Col>
+                    </Row>
 
             </Container>
         </>
