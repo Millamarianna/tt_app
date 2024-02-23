@@ -157,7 +157,7 @@ const Page1 = () => {
               <Card.Text>
                 Tietoa terapeutista. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </Card.Text>
-              <Button variant="primary">Varaa aika</Button>
+              <Button className="t-btn">Varaa aika</Button>
             </Card.Body>
           </Card>
         </Col>

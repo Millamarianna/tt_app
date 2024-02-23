@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Container from 'react-bootstrap/Container';
 import { Button, Col, Image } from 'react-bootstrap';
 import useWindowSize from '../hooks/useWindowSize';
-import package_image from '../assets/package.png';
 import loistaa from '../assets/resp_loistaa.png';
+import terttu from '../assets/resp_terttu.png';
 import Carousel from 'react-bootstrap/Carousel';
 import { PiArrowBendUpRightBold } from "react-icons/pi";
 import Row from 'react-bootstrap/Row';
@@ -13,7 +13,6 @@ const Packages = () => {
     const aspectRatio = 5502.992 / 2076.9963;
     const y = 0.9 * size.width;
     const x = 0.4 * size.height * aspectRatio;
-    const textBox = y < x;
     const [index, setIndex] = useState(0);
 
     const header = ["One-pager", "Sivut pienyrittäjälle", "Koulutuskouluttaja"];
@@ -43,37 +42,29 @@ const Packages = () => {
         width: y < x ? '90vw' : 'auto',
     };
 
-    const textStyle = {
-        position: 'absolute',
-        top: '5%',
-        fontSize: 'calc(16px + (23 - 16) * ((100vw - 300px) / (1600 - 300)))',
-        width: '95vw',
-        color: '#f1efeb',
-    };
-
     const pStyle = {
         fontSize: 'calc(16px + (23 - 16) * ((100vw - 300px) / (1600 - 300)))',
         color: '#f1efeb',
     };
     const headerStyle = {
         textAlign: 'center',
-        fontSize: 'calc(18px + (25 - 16) * ((100vw - 300px) / (1600 - 300)))',
+        fontSize: 'calc(18px + (25 - 18) * ((100vw - 300px) / (1600 - 300)))',
         fontWeight: '700',
         color: '#f1efeb',
     };
 
     return (
-        <><Container fluid className="carouselcontainer">
-            <Carousel activeIndex={index} onSelect={handleSelect} style={imageStyle} indicators={false} interval={null} fade={true} controls={true} touch={true}>
-                <Carousel.Item>
+        <><Container fluid className="carouselcontainer" style={imageStyle}>
+            <Carousel activeIndex={index}  onSelect={handleSelect} indicators={false} interval={null} fade={true} controls={true} touch={true}>
+                <Carousel.Item >
                     <Image src={loistaa} style={imageStyle} text="First slide" />
 
                 </Carousel.Item>
-                <Carousel.Item>
-                    <Image src={loistaa} style={imageStyle} text="Second slide" />
+                <Carousel.Item >
+                    <Image src={terttu} style={imageStyle} text="Second slide" />
 
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item >
                     <Image src={loistaa} style={imageStyle} text="Third slide" />
 
                 </Carousel.Item>
@@ -88,10 +79,13 @@ const Packages = () => {
                 <Row style={{ width: '95vw', }}>
                     <Col xs={12} xxl={6}>
                         <p style={pStyle}>{description[index]}</p>
-                        <Button className='btn button' size="sm" style={{ marginTop: '20px' }}>Pyydä tarjous!</Button>
+                        <Col xs={12} xxl={6}>
+                        <Button className='btn button' size="sm" style={{ marginTop: '20px', marginRight:'5px' }}>Tutustu pakettiin!</Button>
+                        <Button className='btn button' size="sm" style={{ marginTop: '20px', marginLeft:'5px' }}>Pyydä tarjous!</Button>
+                        </Col>
                     </Col>
                     <Col className="d-none d-xxl-block" xxl={6}>
-                        <p style={pStyle}><ul>{listItems(index)}</ul></p>
+                        <ul style={pStyle}>{listItems(index)}</ul>
                     </Col>
                 </Row>
             </Container>

@@ -11,8 +11,8 @@ const Header = () => {
             <Container style={{ marginBottom: '2vh' }}>
                 
                 <Row>
-                    <Col md={2}> <Image src={logowithframe} fluid /> </Col>
-                    <Col md={10} style={{ fontSize: '4vh', alignSelf: 'flex-end' }}>Terapiaterttu</Col>
+                    <Col className="d-none d-md-block" xs={3}> <Image src={logowithframe} fluid /> </Col>
+                    <Col className="d-none d-md-block t-header" xs={9}>Terapiaterttu</Col>
                 </Row>
             </Container>
         </>

@@ -3,8 +3,6 @@ import { Outlet, Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Top from './Top';
 import Computer_image from './Computer_image';
-import Footer from "./Footer";
-import Packages from "../pages/Packages";
 import useWindowSize from '../hooks/useWindowSize'
 
 const Front = () => {

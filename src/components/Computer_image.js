@@ -44,14 +44,14 @@ const Computer_image = () => {
         width: y < x ? '90vw' : 'auto',
     };
 
-    const textBox = y > x && aspectRatio * 0.4 * size.height <= 0.5 * size.width;
+    const textBox = y > x && aspectRatio * 0.4 * size.height <= 0.35 * size.width;
 
     const textStyle = {
         backgroundImage: 'radial-gradient(white 20%, transparent 80%)',
 
         width: `${textBoxWidth}` + 'px',
         paddingLeft: '10vw',
-        fontSize: 'calc(16px + (23 - 16) * ((100vw - 300px) / (1600 - 300)))',
+        fontSize: 'calc(14px + (23 - 14) * ((100vw - 300px) / (1600 - 300)))',
     };
 
     const [visible, setVisible] = useState(true)

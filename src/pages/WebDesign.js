@@ -4,7 +4,6 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { Image } from 'react-bootstrap';
 import React from 'react';
-import kuva from '../assets/therapist_terttu.png';
 import Stack from 'react-bootstrap/Stack';
 import Card from 'react-bootstrap/Card';
 import Collapse from 'react-bootstrap/Collapse';
@@ -18,9 +17,9 @@ const WebDesign = () => {
   const [open2, setOpen2] = useState(false);
   return (
     <>
-      <Container fluid className="description-container animate slide delay-3" style={{ color: '#000000', fontSize: '3vw'}}>
+      <Container fluid className="info-container animate slide delay-3" style={{ color: '#000000', fontSize: '3vw'}}>
           <Row style={{ paddingTop: '0.5vh' }}>
-            <Col className="animate blur delay-2"><Image src={kuva} roundedCircle thumbnail  /></Col>
+            <Col className="animate blur delay-2"></Col>
             <Col className="animate glow delay-2" ><p style={{ backgroundColor: '#FFE363'}}>Milla Tuomainen</p>
             <p style={{ backgroundColor: '#FFE363'}}>Koulutukseltani olen psykologi ja tietojenkäsittelyn tradenomi (suuntautumisena ohjelmointi ja digitaaliset palvelut)</p></Col>
           </Row>

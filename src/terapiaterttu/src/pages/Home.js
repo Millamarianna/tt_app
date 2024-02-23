@@ -1,16 +1,21 @@
+import { useState, useEffect } from 'react';
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import useAuth from "../hooks/useAuth";
 import Button from 'react-bootstrap/Button';
-import { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { Image } from "react-bootstrap";
+
+import { PiArrowBendUpRightBold } from "react-icons/pi";
+
+import useAuth from "../hooks/useAuth";
+ 
 import homecta1 from '../assets/homecta1.png';
 import homecta2 from '../assets/homecta2.png';
 import homecta3 from '../assets/homecta3.png';
-import { PiArrowBendUpRightBold } from "react-icons/pi";
+
 
 const Home = () => {
 
@@ -108,19 +113,19 @@ const Home = () => {
   return (
     <>
       {loading ? (<div  className="logofont">hetki...</div>) :
-        (<Container class="container-fluid" style={{ marginTop: '3vh' }}>
+        (<Container fluid className="t-home-container" style={{ marginTop: '3vh' }}>
           <Row style={{ paddingTop: '0.5vh' }}>
             <Col sm={4}>
-              <Button className='btn float-end button' size="lg">
-              Oletko valmis löytämään tasapainoa elämääsi?<br/> {<PiArrowBendUpRightBold />} <u>Tutustu minuun</u> ja tarjoamiini palveluihin tarkemmin. Yhdessä löydämme sinulle parhaiten sopivan tuen.
+              <Button className='t-button float-end button' size="lg">
+              Toimintakehotus tähän!<br/> {<PiArrowBendUpRightBold />} <u>Tässä linkki</u> tarjoamiisi palveluihin!
               </Button>
             </Col>
             <Col sm={4} style={{alignSelf: 'flex-end' }}>
               <Image src={homecta2} fluid />
             </Col>
             <Col sm={4}>
-            <Button className='btn float-end button' size="lg">
-            Aloita matkasi kohti parempaa hyvinvointia.<br/> {<PiArrowBendUpRightBold />} <u>Varaa aika</u> yksityiseen ja luottamukselliseen keskusteluun. 
+            <Button className='t-button float-end button' size="lg">
+            Tähän toinen toimintakehotus!<br/> {<PiArrowBendUpRightBold />} <u>Tässä linkki</u> ajanvaraukseen! 
               </Button>
             </Col>
           </Row>
@@ -129,8 +134,8 @@ const Home = () => {
               <Image src={homecta1} fluid />
             </Col>
             <Col sm={4}>
-            <Button className='btn float-end button' size="lg">
-            {<PiArrowBendUpRightBold />} <u>Tutustu työkaluihin</u> ja resursseihin, jotka voivat ohjata parempaan itsetuntemukseen ja myönteisiin muutoksiin elämässäsi.
+            <Button className='t-button float-end button' size="lg">
+            {<PiArrowBendUpRightBold />} <u>Kolmas toimintakehotus</u> yhteydenottoon!
             
               </Button>
             </Col>

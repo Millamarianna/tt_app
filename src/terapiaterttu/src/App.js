@@ -1,10 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+// Import the pages
 import Home from "./pages/Home";
-import Layout from './components/Layout';
 import NoPage from "./pages/NoPage";
 import AdminCustomers from "./pages/AdminCustomers";
-import RequireAuthentication from './components/RequireAuthentication';
 import Admin from './pages/Admin';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -15,8 +14,11 @@ import AdminCreateAppointments from './pages/AdminCreateAppointments';
 import UserCreateAppt from './pages/UserCreateAppt';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
+// Import the components
+import Layout from '../components/Layout';
+import RequireAuthentication from '../components/RequireAuthentication';
 
-function TerapiaTerttu() {
+function App() {
   return (
 
     <BrowserRouter>
@@ -45,5 +47,4 @@ function TerapiaTerttu() {
   );
 }
 
-
-export default TerapiaTerttu;
+export default App;

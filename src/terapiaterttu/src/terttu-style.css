@@ -1,0 +1,162 @@
+/*
+html, body {
+  height: 100%;
+  background: linear-gradient(to bottom right, #ffffff 0%, #e6eff1 100%);
+  margin: 0;
+  font-family: "bitter", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #2e332d;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*/
+
+@font-face {
+  font-family: "Freestyle Script Regular";
+  src: local('Freestyle Script Regular'), url('./assets/FREESCPT.woff') format('woff');
+}
+
+.t-layout-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: "bitter", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #2e332d;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border-radius: 5px; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.t-navigator-container {
+  width: 95vw
+}
+
+.t-home-container {
+  align-items: center;
+  justify-content: center;
+  font-size: calc(12px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.t-footer-container {
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  border-top: 1px solid #e6eff1;
+  padding: 1vh;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.t-navigator {
+  background: linear-gradient(to bottom right, #ffffff 0%, #e6eff1 100%);
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-size: calc(12px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.t-logo-in-nav {
+  height: calc(30px + (50 - 30) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.t-header {
+  font-size: calc(20px + (50 - 20) * ((100vw - 300px) / (1600 - 300)));
+  align-self: flex-end;
+}
+
+.logofont {
+  font-family: "Freestyle Script Regular", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #2e332d;
+  font-size: 26px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.t-btn{
+  background-color: #e6eff1 !important;
+  color: #2e332d !important;
+  border: none !important;
+  box-shadow: 0 0 5px #5b605a !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  font-size: 18px !important;
+}
+
+.t-btn:hover {
+  background-color: #4a5b48 !important;
+  border: none !important;
+  color: #e6eff1 !important;
+  outline: none !important;
+}
+
+.t-btn:focus {
+  background-color: #4a5b48 !important;
+  border: none !important;
+  color: #e6eff1 !important;
+  outline: none !important;
+}
+
+.t-btn:active {
+  background-color: #2e332d !important;
+  border: none;
+  color: #e6eff1;
+  outline: none;
+}
+
+
+
+.t-button {
+  background-color: #e6eff1 !important;
+  color: #2e332d !important;
+  border: none !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 5px #5b605a !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  font-size: 18px !important;
+  min-height: 10vw !important; 
+  min-width: 10vw !important; 
+  padding: 4vw !important;
+}
+
+.t-button:hover {
+  background-color: #4a5b48 !important;
+  border: none !important;
+  color: #e6eff1 !important;
+  outline: none !important;
+}
+
+.t-button:focus {
+  background-color: #4a5b48 !important;
+  border: none !important;
+  color: #e6eff1 !important;
+  outline: none !important;
+}
+
+.t-button:active {
+  background-color: #2e332d !important;
+  border: none !important;
+  color: #e6eff1 !important;
+  outline: none !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e6eff1 !important;
+  color: #000000 !important;
+}
