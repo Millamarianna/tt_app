@@ -13,7 +13,7 @@ const Login = () => {
   const { register, handleSubmit, formState: { errors }, } = useForm();
 
   const getUserData = async (token) => {
-    const response = await fetch("https://damp-basin-12729-bd0230035c83.herokuapp.com/users/me", {
+    const response = await fetch("https://fam-backend-base.azurewebsites.net/users/me", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const Login = () => {
   };
 
   const onFormSubmit = async (data) => {
-    const response = await fetch("https://damp-basin-12729-bd0230035c83.herokuapp.com/users/login", {
+    const response = await fetch("https://fam-backend-base.azurewebsites.net/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

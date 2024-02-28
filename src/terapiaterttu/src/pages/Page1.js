@@ -37,7 +37,7 @@ const Page1 = () => {
 
   useEffect(() => {
     const getTexts = async () => {
-      const response = await fetch("https://damp-basin-12729-bd0230035c83.herokuapp.com/text/home", {
+      const response = await fetch("https://fam-backend-base.azurewebsites.net/text/home", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -58,7 +58,7 @@ const Page1 = () => {
 
   const handleEditText = async () => {
     let id = textToEdit._id;
-    const response = await fetch(`https://damp-basin-12729-bd0230035c83.herokuapp.com/text/${id}`, {
+    const response = await fetch(`https://fam-backend-base.azurewebsites.net/text/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

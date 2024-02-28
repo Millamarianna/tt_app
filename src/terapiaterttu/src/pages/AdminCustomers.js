@@ -18,7 +18,7 @@ const AdminCustomers = () => {
 
   useEffect(() => {
     const fetchCustomers = () => {
-      fetch("https://damp-basin-12729-bd0230035c83.herokuapp.com/users")
+      fetch("https://fam-backend-base.azurewebsites.net/users")
         .then((res) => res.json())
         .then((data) => {
           setCustomers(data);
@@ -44,7 +44,7 @@ const AdminCustomers = () => {
     console.log("new info " + JSON.stringify(userToUpdate));
     const id = userToUpdate.id;
     const data = { "first_name": userToUpdate.fname, "last_name": userToUpdate.lname, "email": userToUpdate.email, "phone": userToUpdate.phone };
-    const response = await fetch(`https://damp-basin-12729-bd0230035c83.herokuapp.com/users/${id}`, {
+    const response = await fetch(`https://fam-backend-base.azurewebsites.net/users/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -77,7 +77,7 @@ const AdminCustomers = () => {
 
   const deleteUser = async () => {
     console.log("deleteUser " + userToDelete);
-    const response = await fetch(`https://damp-basin-12729-bd0230035c83.herokuapp.com/users/${userToDelete}`, {
+    const response = await fetch(`https://fam-backend-base.azurewebsites.net/users/${userToDelete}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

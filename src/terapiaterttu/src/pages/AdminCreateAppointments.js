@@ -19,7 +19,7 @@ const AdminCreateAppointments = () => {
 
   useEffect(() => {
     const fetchCustomers = () => {
-      fetch("https://damp-basin-12729-bd0230035c83.herokuapp.com/users")
+      fetch("https://fam-backend-base.azurewebsites.net/users")
         .then((res) => res.json())
         .then((data) => {
           setCustomers(data);
@@ -48,7 +48,7 @@ const AdminCreateAppointments = () => {
   const onFormSubmit = async (data) => {
     data = { ...data, cancelled: false };
     const id = selectedCustomer;
-    const response = await fetch(`https://damp-basin-12729-bd0230035c83.herokuapp.com/appt/${id}`, {
+    const response = await fetch(`https://fam-backend-base.azurewebsites.net/appt/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

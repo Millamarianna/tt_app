@@ -13,7 +13,7 @@ const AdminAppointments = () => {
   useEffect(() => {
   const getAppointments = async () => {
     const token = cookie.parse(document.cookie).jwt;
-    const response = await fetch("https://damp-basin-12729-bd0230035c83.herokuapp.com/appt", {
+    const response = await fetch("https://fam-backend-base.azurewebsites.net/appt", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

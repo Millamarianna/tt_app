@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
             if (jwtCookie) {
                 const jwtToken = jwtCookie.split("=")[1];
 
-                const response = await fetch("https://damp-basin-12729-bd0230035c83.herokuapp.com/users/me", {
+                const response = await fetch("https://fam-backend-base.azurewebsites.net/users/me", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
