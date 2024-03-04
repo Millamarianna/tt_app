@@ -1,8 +1,5 @@
-$fonts: haboro-soft, sans-serif;
-$enable-negative-margins: true;
-$font-color: #4c4c4c;
-$background-color: #f1efeb;
-
+@import '~bootstrap/scss/bootstrap'; 
+@import 'custom';
 
 
 html,body {
