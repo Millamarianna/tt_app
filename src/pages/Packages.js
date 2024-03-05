@@ -91,7 +91,7 @@ const Packages = () => {
         setIndex(selectedIndex);
     };
 
-    const tooSmall = initialOrientation === 'landscape' && size.width < 1000;
+    const tooSmall = (size.width / size.height > 2) || (initialOrientation === 'landscape' && size.width < 1000);
     const tooltipPlace = size.width < 450 ? "top" : "right";
 
     const imageStyle = {
@@ -116,10 +116,6 @@ const Packages = () => {
         fontWeight: '700',
         color: '#000000',
     };
-
-    /* const tooltipStyle = {
-        
-    }; */
 
     const open = () => {
         setShow(true);
@@ -228,7 +224,7 @@ const Packages = () => {
                 <Col xs={12}>
                     {!tooSmall ? (<p style={pStyle}>{description[index]}</p>) : null}
                     <Col xs={12}>
-                        <Button id="1" className='btn button' onClick={open} size="sm" style={{ marginTop: '20px', marginRight: '5px' }}>Tutustu mahdollisuuksiin ja pyydä tarjous!</Button>
+                        <Button id="1" className='btn button' onClick={open} size="sm">Tutustu mahdollisuuksiin ja pyydä tarjous!</Button>
                     </Col>
                 </Col>
             </Row>

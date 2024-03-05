@@ -40,20 +40,18 @@ const Computer_image = () => {
     const imageStyle = {
         position: 'absolute',
         bottom: size.height > size.width ? '30vh' : '10vh',
-        left: size.height < size.width && !textBox ? '25%' : '0%',
+        left: '0%',
         height: y < x ? 'auto' : '40vh',
         width: y < x ? '90vw' : 'auto',
     };
 
-    
-
     const textStyle = {
         backgroundImage: 'radial-gradient(white 20%, transparent 80%)',
-
         width: `${textBoxWidth}` + 'px',
         paddingLeft: '10vw',
         fontSize: 'calc(14px + (23 - 14) * ((100vw - 300px) / (1600 - 300)))',
     };
+    console.log("näytön leveys: " + size.width + "näytön korkeus: " + size.height + "tekstilaatikon leveys: " + textBoxWidth + "kaksi tekstiä: " + twoTxt + "yksi teksti: " + textBox);
 
     const [visible, setVisible] = useState(true)
  
