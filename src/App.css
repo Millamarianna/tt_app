@@ -23991,6 +23991,15 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.frontcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+}
+
 .topcontainer {
   display: flex;
   flex-direction: column;
@@ -24003,7 +24012,7 @@ html, body {
 .imagecontainer {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   position: relative;
   height: 50vh;
@@ -24015,8 +24024,7 @@ html, body {
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 50vh;
-  padding-top: 2vh;
+  height: 100vh;
 }
 
 .carousel-item {

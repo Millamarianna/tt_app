@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import emailjs, { send } from '@emailjs/browser';
 
@@ -39,6 +39,44 @@ const Packages = () => {
     const [showEmailNotSent, setShowEmailNotSent] = useState(false);
     const [formText, setFormText] = useState({});
 
+    const [initialOrientation, setInitialOrientation] = useState(getInitialOrientation());
+    const initialAspectRatio = window.innerWidth / window.innerHeight;
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(orientation: portrait)");
+    
+        const handleOrientationChange = (event) => {
+            window.location.reload();
+            console.log("Orientation changed");
+        };
+    
+        const handleResize = () => {
+            const currentAspectRatio = size.width / size.height;
+    
+            // Reload the page only if the aspect ratio changes significantly
+            if (Math.abs(currentAspectRatio - aspectRatio) > 0.01) {
+                window.location.reload();
+                console.log("Aspect ratio changed");
+            }
+        };
+    
+        // Attach event listeners
+        mediaQuery.addEventListener("change", handleOrientationChange);
+        window.addEventListener("resize", handleResize);
+    
+        // Cleanup event listeners when the component is unmounted
+        return () => {
+            mediaQuery.removeEventListener("change", handleOrientationChange);
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [size.width, size.height, aspectRatio]);
+    
+
+    // Helper function to get the initial orientation
+    function getInitialOrientation() {
+        return window.innerHeight < window.innerWidth ? 'landscape' : 'portrait';
+    }
+
     const handleClose = () => {
         setShow(false);
     }
@@ -48,25 +86,15 @@ const Packages = () => {
         "Responsiiviset kotisivut, jotka toimivat kaikilla laitteilla ja tarjoavat käyttäjälleen saumattoman kokemuksen. One-pager kertoo yrityksesi tarinan ytimekkäästi ja tiiviisti yhdellä sivulla - ei turhia klikkauksia, vain olennainen tieto. "
     ]
 
-    /* const list = [["Responsiivisuus: Sivut mukautuvat kaikille laitteille tietokoneista älypuhelimiin",
-        "Yksilöllinen ulkoasu: Suunnitellaan värit, fontit ja grafiikat juuri sinun yrityksesi brändiä heijastavaksi. Persoonallinen ulkoasu erottaa sinut kilpailijoista ja vahvistaa yrityskuvaasi.",
-        "Sisällön muotoilu: Yksilöllinen sisältösi esitetään houkuttelevasti ja helposti luettavasti. Tehokas muotoilu kiinnittää huomion olennaiseen ja tekee vaikutuksen kävijöihin.",
-        "Hakukoneoptimointi: Huolella suunnitelyu hakukoneoptimointi auttaa parantamaan sijoitustasi hakutuloksissa ja houkuttelee enemmän potentiaalisia asiakkaita."],
-    ["- Sisältää kaiken tarvittavan tiedon\n- Responsiivinen\n- Käyttäjäystävällinen"],
-    ["- Koulutusta kaikenlaisiin ongelmiin\n- Responsiivinen\n- Käyttäjäystävällinen"]]; */
-
-    /* const listItems = (index) => {
-        return list[index].map((list, index) =>
-            <li key={index}>{list}</li>
-        )
-    }; */
 
     const handleSelect = (selectedIndex) => {
         setIndex(selectedIndex);
     };
 
-    const imageStyle = {
+    const tooSmall = initialOrientation === 'landscape' && size.width < 1000;
+    const tooltipPlace = size.width < 450 ? "top" : "right";
 
+    const imageStyle = {
         height: y < x ? 'auto' : '40vh',
         width: y < x ? '90vw' : 'auto',
     };
@@ -89,6 +117,10 @@ const Packages = () => {
         color: '#000000',
     };
 
+    /* const tooltipStyle = {
+        
+    }; */
+
     const open = () => {
         setShow(true);
     }
@@ -108,7 +140,7 @@ const Packages = () => {
             setFormText({ ...formText, [e.target.name]: e.target.checked });
         } else {
             setFormText({ ...formText, [e.target.name]: e.target.value });
-            
+
         }
         console.log(formText);
     }
@@ -120,7 +152,7 @@ const Packages = () => {
             service_id: service_id,
             template_id: template_id,
             user_id: public_key,
-            template_params: { 
+            template_params: {
                 'first_name': formText.first_name,
                 'last_name': formText.last_name,
                 'email': formText.email,
@@ -145,64 +177,62 @@ const Packages = () => {
                 'component7': formText.component7,
                 'component8': formText.component8,
                 'component9': formText.component9,
-                'component_else': formText.component_else}
-    };
+                'component_else': formText.component_else
+            }
+        };
 
 
-    const sendRequest = async () => {
-        const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
+        const sendRequest = async () => {
+            const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
 
-        if (response.ok) {
-            setShow(false);
-            setShowEmailSent(true);
-        } else {
-            console.log("Email not sent");
-            setShowEmailNotSent(true);
-        }}
+            if (response.ok) {
+                setShow(false);
+                setShowEmailSent(true);
+                setFormText({});
+            } else {
+                console.log("Email not sent");
+                setShowEmailNotSent(true);
+            }
+        }
         sendRequest();
     }
 
     return (
-        <><Container fluid className="carouselcontainer" style={imageStyle}>
+        <><Container fluid className="carouselcontainer">
             <div className="typewriter"
-                style={{ position: 'absolute', zIndex: '100', top: '30%', left: '20%', maxWidth: '70%', fontSize: 'calc(16px + (21 - 16) * ((100vw - 300px) / (1600 - 300)))', }}>
+                style={{ position: 'absolute', zIndex: '100', bottom: '30%', left: '20%', maxWidth: '70%', fontSize: 'calc(16px + (21 - 16) * ((100vw - 300px) / (1600 - 300)))', }}>
                 <Toast onClose={() => setShowEmailSent(false)} show={showEmailSent} delay={4000} autohide>
                     Kiitos tarjouspyynnöstäsi! Vastaamme mahdollisimman pian.
                 </Toast>
             </div>
-            <Carousel activeIndex={index} onSelect={handleSelect} indicators={false} interval={null} fade={true} controls={true} touch={true}>
-                <Carousel.Item >
-                    <Image src={terttu} style={imageStyle} text="First slide" />
-                </Carousel.Item>
-                <Carousel.Item >
-                    <Image src={loistaa} style={imageStyle} text="Second slide" />
-                </Carousel.Item>
-            </Carousel>
+            <Row style={imageStyle}>
+                <Carousel activeIndex={index} onSelect={handleSelect} indicators={false} interval={null} fade={true} controls={true} touch={true}>
+                    <Carousel.Item >
+                        <Image src={terttu} style={imageStyle} text="First slide" />
+                    </Carousel.Item>
+                    <Carousel.Item >
+                        <Image src={loistaa} style={imageStyle} text="Second slide" />
+                    </Carousel.Item>
+                </Carousel>
+            </Row>
+            <Row style={imageStyle}>
+                <Col xs={12}>
+                    <p style={headerStyle}>{header[index]}</p>
+                </Col>
+                <Col xs={12}>
+                    {!tooSmall ? (<p style={pStyle}>{description[index]}</p>) : null}
+                    <Col xs={12}>
+                        <Button id="1" className='btn button' onClick={open} size="sm" style={{ marginTop: '20px', marginRight: '5px' }}>Tutustu mahdollisuuksiin ja pyydä tarjous!</Button>
+                    </Col>
+                </Col>
+            </Row>
         </Container>
-            <Container fluid className="description-container">
-                <Row style={{ marginTop: '30px', width: '95vw', }}>
-                    <Col xs={12}>
-                        <p style={headerStyle}>{header[index]}</p>
-                    </Col>
-                </Row>
-                <Row style={{ width: '95vw', }}>
-                    <Col xs={12}>
-                        <p style={pStyle}>{description[index]}</p>
-                        <Col xs={12}>
-                            <Button id="1" className='btn button' onClick={open} size="sm" style={{ marginTop: '20px', marginRight: '5px' }}>Tutustu mahdollisuuksiin ja pyydä tarjous!</Button>
-                        </Col>
-                    </Col>
-                    {/* <Col className="d-none d-xxl-block" xxl={6}>
-                        <ul style={pStyle}>{listItems(index)}</ul>
-                    </Col> */}
-                </Row>
-            </Container>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -212,7 +242,7 @@ const Packages = () => {
                 <Modal.Body>
                     <Form onSubmit={sendEmail}>
                         <Row id="names" className="mb-1 g-1">
-                        
+
                             <Form.Text style={formStyle} onClick={async () => {
                                 if ("clipboard" in navigator) {
                                     await navigator.clipboard.writeText("web@loistaa.fi");
@@ -230,11 +260,11 @@ const Packages = () => {
                                 </Toast>
                             </div>
                             <div className="typewriter"
-                style={{ position: 'absolute', zIndex: '100', bottom: '10%', left: '2%', maxWidth: '75%', fontSize: 'calc(14px + (21 - 14) * ((100vw - 300px) / (1600 - 300)))', }}>
-                <Toast onClose={() => setShowEmailNotSent(false)} show={showEmailNotSent}  delay={6000} autohide>
-                    <p>Virhe lomakkeen lähetyksessä. Voit kopioida kentät ja lähettää ne meille sähköpostilla!</p>Pahoittelut vaivasta, korjaamme vian mahdollisimman pian!
-                </Toast>
-            </div>
+                                style={{ position: 'absolute', zIndex: '100', bottom: '10%', left: '2%', maxWidth: '75%', fontSize: 'calc(14px + (21 - 14) * ((100vw - 300px) / (1600 - 300)))', }}>
+                                <Toast onClose={() => setShowEmailNotSent(false)} show={showEmailNotSent} delay={6000} autohide>
+                                    <p>Virhe lomakkeen lähetyksessä. Voit kopioida kentät ja lähettää ne meille sähköpostilla!</p>Pahoittelut vaivasta, korjaamme vian mahdollisimman pian!
+                                </Toast>
+                            </div>
 
                             <Form.Text muted>Yleiset tiedot</Form.Text>
 
@@ -293,7 +323,7 @@ const Packages = () => {
                                     <Form.Group as={Col}>
                                         <OverlayTrigger
                                             key={`info${index}`}
-                                            placement="right"
+                                            placement={tooltipPlace}
                                             overlay={<Tooltip id={index}>{description}</Tooltip>}>
                                             <Form.Text muted>{<CiSquareQuestion size={22} />}</Form.Text>
                                         </OverlayTrigger>
@@ -328,7 +358,7 @@ const Packages = () => {
                                     <Form.Group as={Col}>
                                         <OverlayTrigger
                                             key={`info${index}`}
-                                            placement="right"
+                                            placement={tooltipPlace}
                                             overlay={<Tooltip id={index}>{description}</Tooltip>}>
                                             <Form.Text muted>{<CiSquareQuestion size={22} />}</Form.Text>
                                         </OverlayTrigger>
@@ -337,7 +367,7 @@ const Packages = () => {
                         })}
                         <Form.Group className="mb-1 g-1">
 
-                            <Form.Control aria-label="Muuta" as="textarea" rows={3} placeholder="Muuta"  name="component_else" value={formText.component_else} onChange={saveTyped} />
+                            <Form.Control aria-label="Muuta" as="textarea" rows={3} placeholder="Muuta" name="component_else" value={formText.component_else} onChange={saveTyped} />
 
                         </Form.Group>
                         <Button className="button" type="submit" >

@@ -17,7 +17,7 @@ const WebDesign = () => {
   const [open2, setOpen2] = useState(false);
   return (
     <>
-      <Container fluid className="info-container animate slide delay-3" style={{ color: '#000000', fontSize: '3vw'}}>
+      <Container fluid className="info-container" style={{ color: '#000000', fontSize: '3vw'}}>
           <Row style={{ paddingTop: '0.5vh' }}>
             <Col className="animate blur delay-2"></Col>
             <Col className="animate glow delay-2" ><p style={{ backgroundColor: '#FFE363'}}>Milla Tuomainen</p>

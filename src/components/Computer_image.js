@@ -35,16 +35,17 @@ const Computer_image = () => {
     const x = 0.4 * size.height * aspectRatio;
 
     const twoTxt = size.height > 900 && size.width > 1600;
+    const textBox = y > x && aspectRatio * 0.4 * size.height <= 0.35 * size.width;
 
     const imageStyle = {
         position: 'absolute',
-        bottom: '10vh',
-        left: '0%',
+        bottom: size.height > size.width ? '30vh' : '10vh',
+        left: size.height < size.width && !textBox ? '25%' : '0%',
         height: y < x ? 'auto' : '40vh',
         width: y < x ? '90vw' : 'auto',
     };
 
-    const textBox = y > x && aspectRatio * 0.4 * size.height <= 0.35 * size.width;
+    
 
     const textStyle = {
         backgroundImage: 'radial-gradient(white 20%, transparent 80%)',
@@ -104,7 +105,7 @@ const Computer_image = () => {
                     </div>
                 ) : null}
 
-            <div onClick={(e) => {e.preventDefault(); scrollToBottom();}} style={{ position: 'absolute', left: '45vw', bottom: '2%', zIndex: '100' }}>
+            <div onClick={(e) => {e.preventDefault(); scrollToBottom();}} style={{ position: 'absolute', left: '45vw', bottom: '5vh', zIndex: '100' }}>
                 <FaChevronDown size={30} />
             </div>
 

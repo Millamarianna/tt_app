@@ -28,7 +28,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Front />}>
           <Route index element={<Packages />} />
-          <Route path="webdesign" element={<WebDesign />} />
         </Route>
 
         <Route path="terttu" element={<Layout />}>
