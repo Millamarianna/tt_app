@@ -25,6 +25,7 @@ const Packages = () => {
     const service_id = process.env.REACT_APP_EMAILJS_SERVICE_ID;
     const template_id = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
     const public_key = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+    const recaptcha = process.env.REACT_APP_RECAPTCHA;
 
     const size = useWindowSize();
 
@@ -173,7 +174,8 @@ const Packages = () => {
                 'component7': formText.component7,
                 'component8': formText.component8,
                 'component9': formText.component9,
-                'component_else': formText.component_else
+                'component_else': formText.component_else,
+                'g-recaptcha-response': recaptcha
             }
         };
 
@@ -250,7 +252,7 @@ const Packages = () => {
                                 Pyydä tarjousta sähköpostilla web@loistaa.fi <sup>{<IoCopyOutline size={10} />}</sup> tai täytä tarjouslomake:
                             </Form.Text>
                             <div className="typewriter"
-                                style={{ position: 'absolute', top: '5%', right: '2%', maxWidth: '50%', fontSize: 'calc(14px + (21 - 14) * ((100vw - 300px) / (1600 - 300)))', }}>
+                                style={{ zIndex: '100', position: 'absolute', top: '5%', right: '2%', maxWidth: '50%', fontSize: 'calc(14px + (21 - 14) * ((100vw - 300px) / (1600 - 300)))', }}>
                                 <Toast onClose={() => setShowCopy(false)} show={showCopy} delay={2000} autohide>
                                     Kopioitu leikepöydälle!
                                 </Toast>
