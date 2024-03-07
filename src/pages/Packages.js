@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import emailjs, { send } from '@emailjs/browser';
+import ReCAPTCHA from 'react-google-recaptcha'
 
 import { CiSquareQuestion } from "react-icons/ci";
 import { IoCopyOutline } from "react-icons/io5";
@@ -179,7 +180,6 @@ const Packages = () => {
             }
         };
 
-
         const sendRequest = async () => {
             const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
                 method: 'POST',
@@ -198,8 +198,12 @@ const Packages = () => {
                 setShowEmailNotSent(true);
             }
         }
-        sendRequest();
-    }
+        grecaptcha.ready(function() {
+            grecaptcha.execute(recaptcha, {action: 'submit'}).then(function(token) {
+            sendRequest();
+        });
+    });
+
 
     return (
         <><Container fluid className="carouselcontainer">
@@ -368,6 +372,7 @@ const Packages = () => {
                             <Form.Control aria-label="Muuta" as="textarea" rows={3} placeholder="Muuta" name="component_else" value={formText.component_else} onChange={saveTyped} />
 
                         </Form.Group>
+                        <ReCAPTCHA sitekey={recaptcha} />
                         <Button className="button" type="submit" >
                             LÄHETÄ
                         </Button>
