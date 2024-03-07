@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import emailjs, { send } from '@emailjs/browser';
-import ReCAPTCHA from 'react-google-recaptcha'
+import { ReCaptchaV3 } from 'react-google-recaptcha-v3';
 
 import { CiSquareQuestion } from "react-icons/ci";
 import { IoCopyOutline } from "react-icons/io5";
@@ -46,33 +46,33 @@ const Packages = () => {
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(orientation: portrait)");
-    
+
         const handleOrientationChange = (event) => {
             window.location.reload();
             console.log("Orientation changed");
         };
-    
+
         const handleResize = () => {
             const currentAspectRatio = size.width / size.height;
-    
+
             // Reload the page only if the aspect ratio changes significantly
             if (Math.abs(currentAspectRatio - aspectRatio) > 0.01) {
                 window.location.reload();
                 console.log("Aspect ratio changed");
             }
         };
-    
+
         // Attach event listeners
         mediaQuery.addEventListener("change", handleOrientationChange);
         window.addEventListener("resize", handleResize);
-    
+
         // Cleanup event listeners when the component is unmounted
         return () => {
             mediaQuery.removeEventListener("change", handleOrientationChange);
             window.removeEventListener("resize", handleResize);
         };
     }, [size.width, size.height, aspectRatio]);
-    
+
 
     // Helper function to get the initial orientation
     function getInitialOrientation() {
@@ -146,6 +146,11 @@ const Packages = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
+        if (!formText['g-recaptcha-response']) {
+            console.error("ReCAPTCHA not accepted");
+            return;
+          }
+          
         const data = {
             service_id: service_id,
             template_id: template_id,
@@ -176,7 +181,7 @@ const Packages = () => {
                 'component8': formText.component8,
                 'component9': formText.component9,
                 'component_else': formText.component_else,
-                'g-recaptcha-response': recaptcha
+                'g-recaptcha-response': formText['g-recaptcha-response']
             }
         };
 
@@ -198,7 +203,7 @@ const Packages = () => {
                 setShowEmailNotSent(true);
             }
         }
-            sendRequest();
+        sendRequest();
     }
 
     return (
@@ -368,7 +373,11 @@ const Packages = () => {
                             <Form.Control aria-label="Muuta" as="textarea" rows={3} placeholder="Muuta" name="component_else" value={formText.component_else} onChange={saveTyped} />
 
                         </Form.Group>
-                        <ReCAPTCHA sitekey={recaptcha} />
+                        <ReCaptchaV3
+                            action="submit_form"
+                            siteKey={recaptcha} 
+                            verifyCallback={(response) => setFormText({ ...formText, 'g-recaptcha-response': response })}
+                        />
                         <Button className="button" type="submit" >
                             LÄHETÄ
                         </Button>
