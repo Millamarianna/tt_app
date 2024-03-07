@@ -198,12 +198,8 @@ const Packages = () => {
                 setShowEmailNotSent(true);
             }
         }
-        grecaptcha.ready(function() {
-            grecaptcha.execute(recaptcha, {action: 'submit'}).then(function(token) {
             sendRequest();
-        });
-    });
-
+    }
 
     return (
         <><Container fluid className="carouselcontainer">
