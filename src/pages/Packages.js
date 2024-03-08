@@ -178,7 +178,7 @@ const Packages = () => {
                 'component8': formText.component8,
                 'component9': formText.component9,
                 'component_else': formText.component_else,
-                'g-recaptcha-response': formText['g-recaptcha-response']
+                'g-recaptcha-response': recaptcha
             }
         };
 
