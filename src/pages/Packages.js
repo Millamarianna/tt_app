@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import emailjs, { send } from '@emailjs/browser';
-import { ReCaptchaV3 } from 'react-google-recaptcha-v3';
+import ReCAPTCHA from 'react-google-recaptcha'
 
 import { CiSquareQuestion } from "react-icons/ci";
 import { IoCopyOutline } from "react-icons/io5";
@@ -27,6 +27,8 @@ const Packages = () => {
     const template_id = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
     const public_key = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
     const recaptcha = process.env.REACT_APP_RECAPTCHA;
+
+    const rc = useRef();
 
     const size = useWindowSize();
 
@@ -150,7 +152,7 @@ const Packages = () => {
             console.error("ReCAPTCHA not accepted");
             return;
           }
-          
+
         const data = {
             service_id: service_id,
             template_id: template_id,
@@ -373,11 +375,7 @@ const Packages = () => {
                             <Form.Control aria-label="Muuta" as="textarea" rows={3} placeholder="Muuta" name="component_else" value={formText.component_else} onChange={saveTyped} />
 
                         </Form.Group>
-                        <ReCaptchaV3
-                            action="submit_form"
-                            siteKey={recaptcha} 
-                            verifyCallback={(response) => setFormText({ ...formText, 'g-recaptcha-response': response })}
-                        />
+                        <ReCAPTCHA sitekey={recaptcha} />
                         <Button className="button" type="submit" >
                             LÄHETÄ
                         </Button>
