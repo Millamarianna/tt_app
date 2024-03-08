@@ -148,11 +148,6 @@ const Packages = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        if (!formText['g-recaptcha-response']) {
-            console.error("ReCAPTCHA not accepted");
-            return;
-          }
-
         const data = {
             service_id: service_id,
             template_id: template_id,
