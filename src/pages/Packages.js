@@ -28,8 +28,6 @@ const Packages = () => {
     const public_key = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
     const recaptcha = process.env.REACT_APP_RECAPTCHA;
 
-    const rc = useRef();
-
     const size = useWindowSize();
 
     const aspectRatio = 5502.992 / 2076.9963;
@@ -46,6 +44,13 @@ const Packages = () => {
     const [initialOrientation, setInitialOrientation] = useState(getInitialOrientation());
     const initialAspectRatio = window.innerWidth / window.innerHeight;
 
+    const rc = useRef();
+    const [token, setToken] = useState(null);
+
+    const handleCaptchaResponseChange = (response) => {
+        console.log(response);
+        setToken(response); 
+      };
     useEffect(() => {
         const mediaQuery = window.matchMedia("(orientation: portrait)");
 
@@ -178,9 +183,10 @@ const Packages = () => {
                 'component8': formText.component8,
                 'component9': formText.component9,
                 'component_else': formText.component_else,
-                'g-recaptcha-response': recaptcha
+                'g-recaptcha-response': token
             }
         };
+        console.log(token);
 
         const sendRequest = async () => {
             const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
@@ -370,7 +376,7 @@ const Packages = () => {
                             <Form.Control aria-label="Muuta" as="textarea" rows={3} placeholder="Muuta" name="component_else" value={formText.component_else} onChange={saveTyped} />
 
                         </Form.Group>
-                        <ReCAPTCHA sitekey={recaptcha} />
+                        <ReCAPTCHA ref={rc} onChange={handleCaptchaResponseChange} sitekey={recaptcha} />
                         <Button className="button" type="submit" >
                             LÄHETÄ
                         </Button>
