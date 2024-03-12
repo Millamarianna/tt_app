@@ -210,7 +210,7 @@ const Packages = () => {
     }
 
     return (
-        <><Container fluid className="carouselcontainer">
+        <><Container fluid className="carouselcontainer overflow-hidden">
             <div className="typewriter"
                 style={{ position: 'absolute', zIndex: '100', bottom: '30%', left: '20%', maxWidth: '70%', fontSize: 'calc(16px + (21 - 16) * ((100vw - 300px) / (1600 - 300)))', }}>
                 <Toast onClose={() => setShowEmailSent(false)} show={showEmailSent} delay={4000} autohide>
@@ -227,9 +227,9 @@ const Packages = () => {
                     </Carousel.Item>
                 </Carousel>
             </Row>
-            <Row style={imageStyle}>
+            <Row className="g-5" style={imageStyle}>
                 <Col xs={12}>
-                    <p style={headerStyle}>{header[index]}</p>
+                    <p style={headerStyle}> </p>
                 </Col>
                 <Col xs={12}>
                     {!tooSmall ? (<p style={pStyle}>{description[index]}</p>) : null}
@@ -305,7 +305,7 @@ const Packages = () => {
                             </FloatingLabel>
                         </Form.Group>
 
-                        <hr />
+                         <hr />
 
                         <Row className="mb-1 g-1">
                             <Form.Text muted>Tarvitsemasi palvelut</Form.Text>
@@ -331,7 +331,7 @@ const Packages = () => {
                                             key={`info${index}`}
                                             placement={tooltipPlace}
                                             overlay={<Tooltip id={index}>{description}</Tooltip>}>
-                                            <Form.Text muted>{<CiSquareQuestion size={22} />}</Form.Text>
+                                            <Form.Text muted>{<CiSquareQuestion size={26} />}</Form.Text>
                                         </OverlayTrigger>
                                     </Form.Group>
                                 </Row>)
@@ -341,7 +341,7 @@ const Packages = () => {
                             <Form.Control aria-label="Muuta" as="textarea" rows={3} placeholder="Muuta" name="service_else" value={formText.service_else} onChange={saveTyped} />
 
                         </Form.Group>
-                        <hr />
+                        {/*<hr />
                         <Row className="mb-1 g-1">
                             <Form.Text muted>Tarvitsemasi komponentit</Form.Text>
                         </Row>
@@ -375,7 +375,7 @@ const Packages = () => {
 
                             <Form.Control aria-label="Muuta" as="textarea" rows={3} placeholder="Muuta" name="component_else" value={formText.component_else} onChange={saveTyped} />
 
-                        </Form.Group>
+                        </Form.Group> */}
                         <ReCAPTCHA ref={rc} onChange={handleCaptchaResponseChange} sitekey={recaptcha} />
                         <Button className="button" type="submit" >
                             LÄHETÄ
