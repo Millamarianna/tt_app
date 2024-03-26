@@ -25,7 +25,7 @@ import Page2 from './terapiaterttu/src/pages/Page2';
 function OtherApp() {
   return (
     <iframe
-      title="Other App"
+      title="Mallisivut"
       src="https://kind-forest-0cf2f2903.4.azurestaticapps.net"
       style={{ width: '100%', height: '100%', border: 'none' }}
     />
@@ -42,7 +42,10 @@ function App() {
           <Route path="/otherapp" element={<OtherApp />} />
         </Route>
 
-        <Route path="terapia" element={<Base />}>
+        <Route path="web" element={<OtherApp />}>
+        </Route>
+
+        {/* <Route path="terapia" element={<Base />}>
           <Route index element={<Home />} />
           <Route path="page1" element={<Page1 />} />
           <Route path="page2" element={<Page2 />} />
@@ -56,7 +59,7 @@ function App() {
           <Route path="customers" element={<AdminCustomers />} />
           <Route path="appointments" element={<AdminAppointments />} />
           <Route path="createappointments" element={<AdminCreateAppointments />} />
-        </Route>
+        </Route> */}
       </Routes>
     </BrowserRouter>
 
