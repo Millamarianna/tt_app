@@ -27,7 +27,7 @@ function OtherApp() {
     <iframe
       title="Mallisivut"
       src="https://kind-forest-0cf2f2903.4.azurestaticapps.net"
-      style={{ width: '100%', height: '100%', border: 'none' }}
+      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none'}}
     />
   );
 }
