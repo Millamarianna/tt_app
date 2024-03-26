@@ -1,6 +1,6 @@
-/*
+
 html, body {
-  height: 100%;
+  height: 100%; 
   background: linear-gradient(to bottom right, #ffffff 0%, #e6eff1 100%);
   margin: 0;
   font-family: "bitter", serif;
@@ -10,7 +10,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-*/
+
 
 @font-face {
   font-family: "Freestyle Script Regular";

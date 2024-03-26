@@ -5,6 +5,7 @@ import Front from './components/Front';
 import Packages from './pages/Packages';
 
 //Terapiaterttu
+import Base from './terapiaterttu/src/components/Base';
 import Layout from './terapiaterttu/src/components/Layout';
 import Home from './terapiaterttu/src/pages/Home';
 import NoPage from "./terapiaterttu/src/pages/NoPage";
@@ -21,6 +22,16 @@ import UserCreateAppt from './terapiaterttu/src/pages/UserCreateAppt';
 import Page1 from './terapiaterttu/src/pages/Page1';
 import Page2 from './terapiaterttu/src/pages/Page2';
 
+function OtherApp() {
+  return (
+    <iframe
+      title="Other App"
+      src="https://kind-forest-0cf2f2903.4.azurestaticapps.net"
+      style={{ width: '100%', height: '100%', border: 'none' }}
+    />
+  );
+}
+
 function App() {
   return (
 
@@ -28,9 +39,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Front />}>
           <Route index element={<Packages />} />
+          <Route path="/otherapp" element={<OtherApp />} />
         </Route>
 
-        <Route path="terttu" element={<Layout />}>
+        <Route path="terapia" element={<Base />}>
           <Route index element={<Home />} />
           <Route path="page1" element={<Page1 />} />
           <Route path="page2" element={<Page2 />} />

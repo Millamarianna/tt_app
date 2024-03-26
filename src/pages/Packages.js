@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import emailjs, { send } from '@emailjs/browser';
 import ReCAPTCHA from 'react-google-recaptcha'
 
 import { CiSquareQuestion } from "react-icons/ci";
